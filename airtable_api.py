@@ -1,14 +1,4 @@
-import os 
-from dotenv import load_dotenv
 import requests 
-
-load_dotenv()
-
-airtable_api_key = os.getenv("AIRTABLE_API_KEY")
-airtable_base_id = os.getenv("AIRTABLE_BASE_ID")
-airtable_intervention_table_id = os.getenv("AIRTABLE_INTERVENTION_TABLE_ID")
-
-
 
 class Table:
     def __init__(self, base_id, table_id, api_key):
@@ -37,19 +27,18 @@ class Table:
             print(f"Error: {response.status_code}")
             return None
 
-
+"""
 # Example usage:
-table = Table(airtable_base_id, airtable_intervention_table_id, airtable_api_key)
+table = Table("", "intervenants", "")
 
 
-table.create_record({"Transcript":"intervention du XXX"})
+
 # Get all records
 records = table.get_records()
 if records:
     for record in records:
         print(record["id"], record["fields"])
         
-
+"""
         
-
 
